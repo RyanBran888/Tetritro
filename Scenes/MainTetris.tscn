@@ -1,0 +1,2518 @@
+[gd_scene load_steps=13 format=3 uid="uid://cteerbto52rkk"]
+
+[ext_resource type="Script" path="res://GameManager.cs" id="1_qw5a6"]
+[ext_resource type="Texture2D" uid="uid://cl1npyg4rjleg" path="res://TetrisRogueLikeBG.png" id="2_x717q"]
+[ext_resource type="Texture2D" uid="uid://hfj386khs0to" path="res://PurpleSingle.png" id="3_f5l36"]
+[ext_resource type="Texture2D" uid="uid://dlb1t50v721bq" path="res://LightBlueSingle.png" id="4_k3n7y"]
+[ext_resource type="Texture2D" uid="uid://cwofrckfj0soq" path="res://YellowSingle.png" id="5_kkgfe"]
+[ext_resource type="Texture2D" uid="uid://cycog4kwhj4lp" path="res://RedSingle.png" id="6_0omgb"]
+[ext_resource type="Texture2D" uid="uid://bqd3od2ns7o7y" path="res://GreenSingle.png" id="7_1sj2c"]
+[ext_resource type="Texture2D" uid="uid://dym0mwtl1cp3g" path="res://BlueSingle.png" id="8_14jl1"]
+[ext_resource type="Texture2D" uid="uid://dcbgi41a06pye" path="res://orange1.png" id="9_qi3la"]
+[ext_resource type="PackedScene" uid="uid://bw2ngpbjsam7b" path="res://Shop.tscn" id="10_ff1ru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uahjt"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8e8o"]
+size = Vector2(41, 39)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qw5a6")
+metadata/_edit_horizontal_guides_ = [328.0]
+
+[node name="TetrisRogueLikeBg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_x717q")
+
+[node name="StaticBody2D" type="Area2D" parent="TetrisRogueLikeBg"]
+position = Vector2(-3, 0)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TetrisRogueLikeBg/StaticBody2D"]
+polygon = PackedVector2Array(-240, -455, 241, -459, 241, 459, -236, 460, -243, 460, -242, -456, -249, -456, -258, 475, 261, 472, 250, -469, -240, -465)
+
+[node name="PH3" type="Polygon2D" parent="."]
+position = Vector2(-202, -205)
+polygon = PackedVector2Array(537, 277, 635, 277, 635, 318, 635, 359, 537, 359, 537, 319)
+
+[node name="Node" type="Node2D" parent="PH3"]
+position = Vector2(586, 319)
+
+[node name="Purple" type="Node2D" parent="."]
+position = Vector2(-568, 374)
+
+[node name="Purple4" type="Sprite2D" parent="Purple" groups=["NotPlaced"]]
+position = Vector2(0, -46)
+texture = ExtResource("3_f5l36")
+
+[node name="StaticBody2D" type="Area2D" parent="Purple/Purple4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Purple/Purple4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Purple3" type="Sprite2D" parent="Purple" groups=["NotPlaced"]]
+position = Vector2(-48, 0)
+texture = ExtResource("3_f5l36")
+
+[node name="StaticBody2D" type="Area2D" parent="Purple/Purple3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Purple/Purple3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Purple1" type="Sprite2D" parent="Purple" groups=["NotPlaced"]]
+texture = ExtResource("3_f5l36")
+
+[node name="StaticBody2D" type="Area2D" parent="Purple/Purple1"]
+collision_mask = 1291
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Purple/Purple1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Purple2" type="Sprite2D" parent="Purple" groups=["NotPlaced"]]
+position = Vector2(48, 0)
+texture = ExtResource("3_f5l36")
+
+[node name="StaticBody2D" type="Area2D" parent="Purple/Purple2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Purple/Purple2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Blue" type="Node2D" parent="."]
+position = Vector2(-143, 40)
+
+[node name="LightBlue2" type="Sprite2D" parent="Blue" groups=["NotPlaced"]]
+position = Vector2(-49, 0)
+texture = ExtResource("4_k3n7y")
+
+[node name="StaticBody2D" type="Area2D" parent="Blue/LightBlue2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue/LightBlue2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="LightBlue1" type="Sprite2D" parent="Blue" groups=["NotPlaced"]]
+texture = ExtResource("4_k3n7y")
+
+[node name="StaticBody2D" type="Area2D" parent="Blue/LightBlue1"]
+collision_mask = 1035
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue/LightBlue1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="LightBlue3" type="Sprite2D" parent="Blue" groups=["NotPlaced"]]
+position = Vector2(47, 0)
+texture = ExtResource("4_k3n7y")
+
+[node name="StaticBody2D" type="Area2D" parent="Blue/LightBlue3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue/LightBlue3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="LightBlue4" type="Sprite2D" parent="Blue" groups=["NotPlaced"]]
+position = Vector2(95, 0)
+texture = ExtResource("4_k3n7y")
+
+[node name="StaticBody2D" type="Area2D" parent="Blue/LightBlue4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue/LightBlue4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Yellow" type="Node2D" parent="."]
+position = Vector2(-11, -121)
+
+[node name="Yellow3" type="Sprite2D" parent="Yellow" groups=["NotPlaced"]]
+position = Vector2(0, -47)
+texture = ExtResource("5_kkgfe")
+
+[node name="StaticBody2D" type="Area2D" parent="Yellow/Yellow3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yellow/Yellow3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Yellow4" type="Sprite2D" parent="Yellow" groups=["NotPlaced"]]
+position = Vector2(49, -47)
+texture = ExtResource("5_kkgfe")
+
+[node name="StaticBody2D" type="Area2D" parent="Yellow/Yellow4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yellow/Yellow4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Yellow1" type="Sprite2D" parent="Yellow" groups=["NotPlaced"]]
+texture = ExtResource("5_kkgfe")
+
+[node name="StaticBody2D" type="Area2D" parent="Yellow/Yellow1"]
+collision_mask = 1035
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yellow/Yellow1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Yellow2" type="Sprite2D" parent="Yellow" groups=["NotPlaced"]]
+position = Vector2(48, 0)
+texture = ExtResource("5_kkgfe")
+
+[node name="StaticBody2D" type="Area2D" parent="Yellow/Yellow2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yellow/Yellow2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Red" type="Node2D" parent="."]
+position = Vector2(456, -56)
+
+[node name="Red4" type="Sprite2D" parent="Red" groups=["NotPlaced"]]
+position = Vector2(-47, -45)
+texture = ExtResource("6_0omgb")
+
+[node name="StaticBody2D" type="Area2D" parent="Red/Red4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red/Red4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Red3" type="Sprite2D" parent="Red" groups=["NotPlaced"]]
+position = Vector2(1, -45)
+texture = ExtResource("6_0omgb")
+
+[node name="StaticBody2D" type="Area2D" parent="Red/Red3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red/Red3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Red1" type="Sprite2D" parent="Red" groups=["NotPlaced"]]
+texture = ExtResource("6_0omgb")
+
+[node name="StaticBody2D" type="Area2D" parent="Red/Red1"]
+collision_mask = 1035
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red/Red1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Red2" type="Sprite2D" parent="Red" groups=["NotPlaced"]]
+position = Vector2(48, 1)
+texture = ExtResource("6_0omgb")
+
+[node name="StaticBody2D" type="Area2D" parent="Red/Red2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red/Red2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Green" type="Node2D" parent="."]
+position = Vector2(913, -56)
+
+[node name="Green4" type="Sprite2D" parent="Green" groups=["NotPlaced"]]
+position = Vector2(49, -46)
+texture = ExtResource("7_1sj2c")
+
+[node name="StaticBody2D" type="Area2D" parent="Green/Green4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green/Green4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Green3" type="Sprite2D" parent="Green" groups=["NotPlaced"]]
+position = Vector2(0, -45)
+texture = ExtResource("7_1sj2c")
+
+[node name="StaticBody2D" type="Area2D" parent="Green/Green3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green/Green3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Green1" type="Sprite2D" parent="Green" groups=["NotPlaced"]]
+texture = ExtResource("7_1sj2c")
+
+[node name="StaticBody2D" type="Area2D" parent="Green/Green1"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green/Green1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Green2" type="Sprite2D" parent="Green" groups=["NotPlaced"]]
+position = Vector2(-48, 0)
+texture = ExtResource("7_1sj2c")
+
+[node name="StaticBody2D" type="Area2D" parent="Green/Green2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green/Green2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="DarkBlue" type="Node2D" parent="."]
+position = Vector2(703, -109)
+
+[node name="DarkBlue2" type="Sprite2D" parent="DarkBlue" groups=["NotPlaced"]]
+position = Vector2(-47, 1)
+texture = ExtResource("8_14jl1")
+
+[node name="StaticBody2D" type="Area2D" parent="DarkBlue/DarkBlue2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkBlue/DarkBlue2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="DarkBlue1" type="Sprite2D" parent="DarkBlue" groups=["NotPlaced"]]
+position = Vector2(0, 1)
+texture = ExtResource("8_14jl1")
+
+[node name="StaticBody2D" type="Area2D" parent="DarkBlue/DarkBlue1"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkBlue/DarkBlue1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="DarkBlue4" type="Sprite2D" parent="DarkBlue" groups=["NotPlaced"]]
+position = Vector2(48, 1)
+texture = ExtResource("8_14jl1")
+
+[node name="StaticBody2D" type="Area2D" parent="DarkBlue/DarkBlue4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkBlue/DarkBlue4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="DarkBlue3" type="Sprite2D" parent="DarkBlue" groups=["NotPlaced"]]
+position = Vector2(-47, 47)
+texture = ExtResource("8_14jl1")
+
+[node name="StaticBody2D" type="Area2D" parent="DarkBlue/DarkBlue3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkBlue/DarkBlue3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Orange" type="Node2D" parent="."]
+position = Vector2(1088, -99)
+
+[node name="Orange2" type="Sprite2D" parent="Orange" groups=["NotPlaced"]]
+position = Vector2(-49, -1)
+texture = ExtResource("9_qi3la")
+
+[node name="StaticBody2D" type="Area2D" parent="Orange/Orange2"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange/Orange2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Orange1" type="Sprite2D" parent="Orange" groups=["NotPlaced"]]
+texture = ExtResource("9_qi3la")
+
+[node name="StaticBody2D" type="Area2D" parent="Orange/Orange1"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange/Orange1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Orange4" type="Sprite2D" parent="Orange" groups=["NotPlaced"]]
+position = Vector2(48, 0)
+texture = ExtResource("9_qi3la")
+
+[node name="StaticBody2D" type="Area2D" parent="Orange/Orange4"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange/Orange4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Orange3" type="Sprite2D" parent="Orange" groups=["NotPlaced"]]
+position = Vector2(47, 46)
+texture = ExtResource("9_qi3la")
+
+[node name="StaticBody2D" type="Area2D" parent="Orange/Orange3"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange/Orange3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_uahjt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="R1" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R1"]
+position = Vector2(744, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R1"]
+position = Vector2(792, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R1"]
+position = Vector2(840, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R1"]
+position = Vector2(888, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R1"]
+position = Vector2(936, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R1"]
+position = Vector2(984, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R1"]
+position = Vector2(1032, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R1"]
+position = Vector2(1080, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R1"]
+position = Vector2(1128, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R1"]
+position = Vector2(1176, 106)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R2" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R2"]
+position = Vector2(744, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R2"]
+position = Vector2(792, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R2"]
+position = Vector2(840, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R2"]
+position = Vector2(888, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R2"]
+position = Vector2(936, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R2"]
+position = Vector2(984, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R2"]
+position = Vector2(1032, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R2"]
+position = Vector2(1080, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R2"]
+position = Vector2(1128, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R2"]
+position = Vector2(1176, 152)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R3" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R3"]
+position = Vector2(744, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R3"]
+position = Vector2(792, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R3"]
+position = Vector2(840, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R3"]
+position = Vector2(888, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R3"]
+position = Vector2(936, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R3"]
+position = Vector2(984, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R3"]
+position = Vector2(1032, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R3"]
+position = Vector2(1080, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R3"]
+position = Vector2(1128, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R3"]
+position = Vector2(1176, 198)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R4" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R4"]
+position = Vector2(744, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R4"]
+position = Vector2(792, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R4"]
+position = Vector2(840, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R4"]
+position = Vector2(888, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R4"]
+position = Vector2(936, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R4"]
+position = Vector2(984, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R4"]
+position = Vector2(1032, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R4"]
+position = Vector2(1080, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R4"]
+position = Vector2(1128, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R4"]
+position = Vector2(1176, 244)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R5" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R5"]
+position = Vector2(744, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R5"]
+position = Vector2(792, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R5"]
+position = Vector2(840, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R5"]
+position = Vector2(888, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R5"]
+position = Vector2(936, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R5"]
+position = Vector2(984, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R5"]
+position = Vector2(1032, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R5"]
+position = Vector2(1080, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R5"]
+position = Vector2(1128, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R5"]
+position = Vector2(1176, 290)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R6" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R6"]
+position = Vector2(744, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R6"]
+position = Vector2(792, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R6"]
+position = Vector2(840, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R6"]
+position = Vector2(888, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R6"]
+position = Vector2(936, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R6"]
+position = Vector2(984, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R6"]
+position = Vector2(1032, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R6"]
+position = Vector2(1080, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R6"]
+position = Vector2(1128, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R6"]
+position = Vector2(1176, 336)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R7" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R7"]
+position = Vector2(744, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R7"]
+position = Vector2(792, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R7"]
+position = Vector2(840, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R7"]
+position = Vector2(888, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R7"]
+position = Vector2(936, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R7"]
+position = Vector2(984, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R7"]
+position = Vector2(1032, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R7"]
+position = Vector2(1080, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R7"]
+position = Vector2(1128, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R7"]
+position = Vector2(1176, 382)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R7/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R8" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R8"]
+position = Vector2(744, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R8"]
+position = Vector2(792, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R8"]
+position = Vector2(840, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R8"]
+position = Vector2(888, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R8"]
+position = Vector2(936, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R8"]
+position = Vector2(984, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R8"]
+position = Vector2(1032, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R8"]
+position = Vector2(1080, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R8"]
+position = Vector2(1128, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R8"]
+position = Vector2(1176, 428)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R8/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R9" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R9"]
+position = Vector2(744, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R9"]
+position = Vector2(792, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R9"]
+position = Vector2(840, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R9"]
+position = Vector2(888, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R9"]
+position = Vector2(936, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R9"]
+position = Vector2(984, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R9"]
+position = Vector2(1032, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R9"]
+position = Vector2(1080, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R9"]
+position = Vector2(1128, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R9"]
+position = Vector2(1176, 474)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R9/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R10" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R10"]
+position = Vector2(744, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R10"]
+position = Vector2(792, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R10"]
+position = Vector2(840, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R10"]
+position = Vector2(888, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R10"]
+position = Vector2(936, 518)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R10"]
+position = Vector2(984, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R10"]
+position = Vector2(1032, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R10"]
+position = Vector2(1080, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R10"]
+position = Vector2(1128, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R10"]
+position = Vector2(1176, 519)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R10/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R11" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R11"]
+position = Vector2(744, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R11"]
+position = Vector2(792, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R11"]
+position = Vector2(840, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R11"]
+position = Vector2(888, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R11"]
+position = Vector2(936, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R11"]
+position = Vector2(984, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R11"]
+position = Vector2(1032, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R11"]
+position = Vector2(1080, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R11"]
+position = Vector2(1128, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R11"]
+position = Vector2(1176, 562)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R11/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R12" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R12"]
+position = Vector2(744, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R12"]
+position = Vector2(792, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R12"]
+position = Vector2(840, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R12"]
+position = Vector2(888, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R12"]
+position = Vector2(936, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R12"]
+position = Vector2(984, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R12"]
+position = Vector2(1032, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R12"]
+position = Vector2(1080, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R12"]
+position = Vector2(1128, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R12"]
+position = Vector2(1176, 606)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R12/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R13" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R13"]
+position = Vector2(744, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R13"]
+position = Vector2(792, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R13"]
+position = Vector2(840, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R13"]
+position = Vector2(888, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R13"]
+position = Vector2(936, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R13"]
+position = Vector2(984, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R13"]
+position = Vector2(1032, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R13"]
+position = Vector2(1080, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R13"]
+position = Vector2(1128, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R13"]
+position = Vector2(1176, 652)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R13/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R14" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R14"]
+position = Vector2(744, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R14"]
+position = Vector2(792, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R14"]
+position = Vector2(840, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R14"]
+position = Vector2(888, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R14"]
+position = Vector2(936, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R14"]
+position = Vector2(984, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R14"]
+position = Vector2(1032, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R14"]
+position = Vector2(1080, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R14"]
+position = Vector2(1128, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R14"]
+position = Vector2(1176, 698)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R14/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R15" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R15"]
+position = Vector2(744, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R15"]
+position = Vector2(792, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R15"]
+position = Vector2(840, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R15"]
+position = Vector2(888, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R15"]
+position = Vector2(936, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R15"]
+position = Vector2(984, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R15"]
+position = Vector2(1032, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R15"]
+position = Vector2(1080, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R15"]
+position = Vector2(1128, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R15"]
+position = Vector2(1176, 744)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R15/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R16" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R16"]
+position = Vector2(744, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R16"]
+position = Vector2(792, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R16"]
+position = Vector2(840, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R16"]
+position = Vector2(888, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R16"]
+position = Vector2(936, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R16"]
+position = Vector2(984, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R16"]
+position = Vector2(1032, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R16"]
+position = Vector2(1080, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R16"]
+position = Vector2(1128, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R16"]
+position = Vector2(1176, 790)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R16/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R17" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R17"]
+position = Vector2(744, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R17"]
+position = Vector2(792, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R17"]
+position = Vector2(840, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R17"]
+position = Vector2(888, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R17"]
+position = Vector2(936, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R17"]
+position = Vector2(984, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R17"]
+position = Vector2(1032, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R17"]
+position = Vector2(1080, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R17"]
+position = Vector2(1128, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R17"]
+position = Vector2(1176, 836)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R17/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R18" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R18"]
+position = Vector2(744, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C1"]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R18"]
+position = Vector2(792, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C2"]
+position = Vector2(-48, 0)
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R18"]
+position = Vector2(840, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R18"]
+position = Vector2(888, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R18"]
+position = Vector2(936, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R18"]
+position = Vector2(984, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R18"]
+position = Vector2(1032, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R18"]
+position = Vector2(1080, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R18"]
+position = Vector2(1128, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R18"]
+position = Vector2(1176, 882)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R18/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R19" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R19"]
+position = Vector2(744, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R19"]
+position = Vector2(792, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R19"]
+position = Vector2(840, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R19"]
+position = Vector2(888, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R19"]
+position = Vector2(936, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R19"]
+position = Vector2(984, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R19"]
+position = Vector2(1032, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R19"]
+position = Vector2(1080, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R19"]
+position = Vector2(1128, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R19"]
+position = Vector2(1176, 928)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R19/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="R20" type="Node" parent="."]
+
+[node name="C1" type="Area2D" parent="R20"]
+position = Vector2(744, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C1"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C2" type="Area2D" parent="R20"]
+position = Vector2(792, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C2"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C3" type="Area2D" parent="R20"]
+position = Vector2(840, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C3"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C4" type="Area2D" parent="R20"]
+position = Vector2(888, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C4"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C5" type="Area2D" parent="R20"]
+position = Vector2(936, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C5"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C6" type="Area2D" parent="R20"]
+position = Vector2(984, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C6"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C7" type="Area2D" parent="R20"]
+position = Vector2(1032, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C7"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C8" type="Area2D" parent="R20"]
+position = Vector2(1080, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C8"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C9" type="Area2D" parent="R20"]
+position = Vector2(1128, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C9"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="C10" type="Area2D" parent="R20"]
+position = Vector2(1176, 974)
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R20/C10"]
+shape = SubResource("RectangleShape2D_j8e8o")
+
+[node name="NextPieces" type="VBoxContainer" parent="."]
+offset_left = 1252.0
+offset_top = 132.0
+offset_right = 1438.0
+offset_bottom = 487.0
+
+[node name="NextPiece1" type="Node2D" parent="NextPieces"]
+position = Vector2(98, 59)
+
+[node name="NextPiece2" type="Node2D" parent="NextPieces"]
+position = Vector2(93, 146)
+
+[node name="NextPiece3" type="Node2D" parent="NextPieces"]
+position = Vector2(94, 235)
+
+[node name="NextPiece4" type="Node2D" parent="NextPieces"]
+position = Vector2(93, 315)
+
+[node name="moneyLabel" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 72.0
+offset_right = 683.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 50
+text = "$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="clearLabel" type="Label" parent="."]
+offset_left = 495.0
+offset_top = 170.0
+offset_right = 680.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PLabel1" type="Label" parent="."]
+offset_left = 402.0
+offset_top = 431.0
+offset_right = 589.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PLabel2" type="Label" parent="."]
+offset_left = 405.0
+offset_top = 539.0
+offset_right = 592.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PLabel3" type="Label" parent="."]
+offset_left = 407.0
+offset_top = 649.0
+offset_right = 594.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PLabel4" type="Label" parent="."]
+offset_left = 406.0
+offset_top = 752.0
+offset_right = 593.0
+offset_bottom = 830.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PH" type="Polygon2D" parent="."]
+position = Vector2(-1, -20)
+polygon = PackedVector2Array(496, 277, 684, 277, 684, 328, 684, 359, 496, 359)
+
+[node name="Laaaa" type="Label" parent="PH"]
+offset_left = 496.0
+offset_top = 250.0
+offset_right = 684.0
+offset_bottom = 326.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Points to move on:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pointsLabel" type="Label" parent="PH"]
+offset_left = 497.0
+offset_top = 285.0
+offset_right = 685.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PH2" type="Polygon2D" parent="."]
+position = Vector2(-3, 78)
+polygon = PackedVector2Array(496, 277, 684, 277, 684, 328, 684, 359, 496, 359)
+
+[node name="Laaaa" type="Label" parent="PH2"]
+offset_left = 496.0
+offset_top = 250.0
+offset_right = 684.0
+offset_bottom = 326.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "remaining blocks:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="blockLeft" type="Label" parent="PH2"]
+offset_left = 497.0
+offset_top = 285.0
+offset_right = 685.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" parent="." instance=ExtResource("10_ff1ru")]
+position = Vector2(-3000, -3000)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="icons" type="Node" parent="."]
+
+[node name="set" type="Node" parent="icons"]
+
+[node name="DarkBlueSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/DarkBlueSet"]
+texture = ExtResource("8_14jl1")
+
+[node name="GreenSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/GreenSet"]
+texture = ExtResource("7_1sj2c")
+
+[node name="BlueSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/BlueSet"]
+texture = ExtResource("4_k3n7y")
+
+[node name="OrangeSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/OrangeSet"]
+texture = ExtResource("9_qi3la")
+
+[node name="PurpleSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/PurpleSet"]
+texture = ExtResource("3_f5l36")
+
+[node name="RedSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/RedSet"]
+texture = ExtResource("6_0omgb")
+
+[node name="YellowSet" type="Node2D" parent="icons/set"]
+position = Vector2(-190, 0)
+
+[node name="BlueSingle" type="Sprite2D" parent="icons/set/YellowSet"]
+texture = ExtResource("5_kkgfe")
+
+[node name="mult" type="Node" parent="icons"]
+
+[node name="OrangeMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/OrangeMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/OrangeMult"]
+position = Vector2(0, 1)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/OrangeMult"]
+position = Vector2(40, 41)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/OrangeMult"]
+position = Vector2(40, -39)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/OrangeMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("9_qi3la")
+
+[node name="BlueMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/BlueMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("4_k3n7y")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/BlueMult"]
+position = Vector2(0, 1)
+texture = ExtResource("4_k3n7y")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/BlueMult"]
+position = Vector2(40, 41)
+texture = ExtResource("4_k3n7y")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/BlueMult"]
+position = Vector2(40, -39)
+texture = ExtResource("4_k3n7y")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/BlueMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("4_k3n7y")
+
+[node name="GreenMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/GreenMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("7_1sj2c")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/GreenMult"]
+position = Vector2(0, 1)
+texture = ExtResource("7_1sj2c")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/GreenMult"]
+position = Vector2(40, 41)
+texture = ExtResource("7_1sj2c")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/GreenMult"]
+position = Vector2(40, -39)
+texture = ExtResource("7_1sj2c")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/GreenMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("7_1sj2c")
+
+[node name="PurpleMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/PurpleMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("3_f5l36")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/PurpleMult"]
+position = Vector2(0, 1)
+texture = ExtResource("3_f5l36")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/PurpleMult"]
+position = Vector2(40, 41)
+texture = ExtResource("3_f5l36")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/PurpleMult"]
+position = Vector2(40, -39)
+texture = ExtResource("3_f5l36")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/PurpleMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("3_f5l36")
+
+[node name="RedMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/RedMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("6_0omgb")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/RedMult"]
+position = Vector2(0, 1)
+texture = ExtResource("6_0omgb")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/RedMult"]
+position = Vector2(40, 41)
+texture = ExtResource("6_0omgb")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/RedMult"]
+position = Vector2(40, -39)
+texture = ExtResource("6_0omgb")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/RedMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("6_0omgb")
+
+[node name="YellowMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/YellowMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("5_kkgfe")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/YellowMult"]
+position = Vector2(0, 1)
+texture = ExtResource("5_kkgfe")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/YellowMult"]
+position = Vector2(40, 41)
+texture = ExtResource("5_kkgfe")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/YellowMult"]
+position = Vector2(40, -39)
+texture = ExtResource("5_kkgfe")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/YellowMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("5_kkgfe")
+
+[node name="DarkBlueMult" type="Node2D" parent="icons/mult"]
+position = Vector2(-190, 0)
+
+[node name="Orange1" type="Sprite2D" parent="icons/mult/DarkBlueMult"]
+position = Vector2(-40, -39)
+texture = ExtResource("8_14jl1")
+
+[node name="Orange2" type="Sprite2D" parent="icons/mult/DarkBlueMult"]
+position = Vector2(0, 1)
+texture = ExtResource("8_14jl1")
+
+[node name="Orange3" type="Sprite2D" parent="icons/mult/DarkBlueMult"]
+position = Vector2(40, 41)
+texture = ExtResource("8_14jl1")
+
+[node name="Orange4" type="Sprite2D" parent="icons/mult/DarkBlueMult"]
+position = Vector2(40, -39)
+texture = ExtResource("8_14jl1")
+
+[node name="Orange5" type="Sprite2D" parent="icons/mult/DarkBlueMult"]
+position = Vector2(-40, 41)
+texture = ExtResource("8_14jl1")
+
+[node name="other" type="Node" parent="icons"]
+
+[node name="HoldPiece" type="Node2D" parent="icons/other"]
+position = Vector2(-471, 235)
+
+[node name="Orange1" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(-93, -62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange2" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(-93, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange3" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(-73, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_qi3la")
+
+[node name="Orange4" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(-93, -82)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_qi3la")
+
+[node name="PurpleSingle" type="Sprite2D" parent="icons/other/HoldPiece"]
+texture = ExtResource("3_f5l36")
+
+[node name="PurpleSingle2" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(-40, 0)
+texture = ExtResource("3_f5l36")
+
+[node name="PurpleSingle4" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(0, 40)
+texture = ExtResource("3_f5l36")
+
+[node name="PurpleSingle3" type="Sprite2D" parent="icons/other/HoldPiece"]
+position = Vector2(40, 0)
+texture = ExtResource("3_f5l36")
+
+[node name="rowTop" type="Node2D" parent="icons/other"]
+position = Vector2(-932, 131)
+
+[node name="PurpleSingle" type="Sprite2D" parent="icons/other/rowTop"]
+texture = ExtResource("3_f5l36")
+
+[node name="PurpleSingle2" type="Sprite2D" parent="icons/other/rowTop"]
+position = Vector2(40, 0)
+texture = ExtResource("9_qi3la")
+
+[node name="PurpleSingle3" type="Sprite2D" parent="icons/other/rowTop"]
+position = Vector2(-40, 0)
+texture = ExtResource("6_0omgb")
+
+[node name="PurpleSingle4" type="Sprite2D" parent="icons/other/rowTop"]
+position = Vector2(79, 0)
+texture = ExtResource("5_kkgfe")
+
+[node name="Q" type="Node2D" parent="."]
+position = Vector2(602, 484)
+
+[node name="E" type="Node2D" parent="."]
+position = Vector2(605, 576)
+
+[node name="R" type="Node2D" parent="."]
+position = Vector2(604, 689)
+
+[node name="F" type="Node2D" parent="."]
+position = Vector2(603, 786)
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(106, 889)
+
+[node name="2" type="Node2D" parent="."]
+position = Vector2(254, 886)
+
+[node name="3" type="Node2D" parent="."]
+position = Vector2(392, 885)
+
+[node name="4" type="Node2D" parent="."]
+position = Vector2(564, 887)
+
+[node name="5" type="Node2D" parent="."]
+position = Vector2(107, 1002)
+
+[node name="6" type="Node2D" parent="."]
+position = Vector2(256, 1003)
+
+[node name="7" type="Node2D" parent="."]
+position = Vector2(390, 1006)
+
+[node name="8" type="Node2D" parent="."]
+position = Vector2(574, 1008)
+
+[connection signal="body_entered" from="TetrisRogueLikeBg/StaticBody2D" to="." method="EnterBodyRotationCheck"]
+[connection signal="area_entered" from="Purple/Purple4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Purple/Purple3/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Purple/Purple1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Purple/Purple2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Blue/LightBlue2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Blue/LightBlue1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Blue/LightBlue3/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Blue/LightBlue4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Yellow/Yellow3/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Yellow/Yellow4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Yellow/Yellow1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Yellow/Yellow2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Red/Red4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Red/Red3/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Red/Red1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Red/Red2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Green/Green4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Green/Green3/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Green/Green1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Green/Green2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="DarkBlue/DarkBlue2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="DarkBlue/DarkBlue1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="DarkBlue/DarkBlue4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="DarkBlue/DarkBlue3/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Orange/Orange2/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Orange/Orange1/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Orange/Orange4/StaticBody2D" to="." method="Hit"]
+[connection signal="area_entered" from="Orange/Orange3/StaticBody2D" to="." method="Hit"]
+[connection signal="timeout" from="Timer" to="." method="Timeout"]
+[connection signal="area_entered" from="R1/C1" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C2" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C3" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C4" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C5" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C6" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C7" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C8" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C9" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R1/C10" to="." method="Row1Enter"]
+[connection signal="area_entered" from="R2/C1" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C2" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C3" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C4" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C5" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C6" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C7" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C8" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C9" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R2/C10" to="." method="Row2Enter"]
+[connection signal="area_entered" from="R3/C1" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C2" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C3" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C4" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C5" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C6" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C7" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C8" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C9" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R3/C10" to="." method="Row3Enter"]
+[connection signal="area_entered" from="R4/C1" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C2" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C3" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C4" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C5" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C6" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C7" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C8" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C9" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R4/C10" to="." method="Row4Enter"]
+[connection signal="area_entered" from="R5/C1" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C2" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C3" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C4" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C5" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C6" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C7" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C8" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C9" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R5/C10" to="." method="Row5Enter"]
+[connection signal="area_entered" from="R6/C1" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C2" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C3" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C4" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C5" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C6" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C7" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C8" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C9" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R6/C10" to="." method="Row6Enter"]
+[connection signal="area_entered" from="R7/C1" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C2" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C3" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C4" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C5" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C6" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C7" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C8" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C9" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R7/C10" to="." method="Row7Enter"]
+[connection signal="area_entered" from="R8/C1" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C2" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C3" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C4" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C5" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C6" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C7" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C8" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C9" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R8/C10" to="." method="Row8Enter"]
+[connection signal="area_entered" from="R9/C1" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C2" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C3" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C4" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C5" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C6" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C7" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C8" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C9" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R9/C10" to="." method="Row9Enter"]
+[connection signal="area_entered" from="R10/C1" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C2" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C3" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C4" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C5" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C6" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C7" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C8" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C9" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R10/C10" to="." method="Row10Enter"]
+[connection signal="area_entered" from="R11/C1" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C2" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C3" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C4" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C5" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C6" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C7" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C8" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C9" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R11/C10" to="." method="Row11Enter"]
+[connection signal="area_entered" from="R12/C1" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C2" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C3" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C4" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C5" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C6" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C7" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C8" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C9" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R12/C10" to="." method="Row12Enter"]
+[connection signal="area_entered" from="R13/C1" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C2" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C3" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C4" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C5" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C6" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C7" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C8" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C9" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R13/C10" to="." method="Row13Enter"]
+[connection signal="area_entered" from="R14/C1" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C1" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C2" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C2" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C3" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C3" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C4" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C4" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C5" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C5" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C6" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C6" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C7" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C7" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C8" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C8" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C9" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C9" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R14/C10" to="." method="Row14Enter"]
+[connection signal="body_entered" from="R14/C10" to="." method="Row14Enter"]
+[connection signal="area_entered" from="R15/C1" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C1" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C2" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C2" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C3" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C3" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C4" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C4" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C5" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C5" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C6" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C6" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C7" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C7" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C8" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C8" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C9" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C9" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R15/C10" to="." method="Row15Enter"]
+[connection signal="body_entered" from="R15/C10" to="." method="Row15Enter"]
+[connection signal="area_entered" from="R16/C1" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C1" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C2" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C2" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C3" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C3" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C4" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C4" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C5" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C5" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C6" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C6" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C7" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C7" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C8" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C8" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C9" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C9" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R16/C10" to="." method="Row16Enter"]
+[connection signal="body_entered" from="R16/C10" to="." method="Row16Enter"]
+[connection signal="area_entered" from="R17/C1" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C1" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C2" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C2" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C3" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C3" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C4" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C4" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C5" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C5" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C6" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C6" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C7" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C7" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C8" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C8" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C9" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C9" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R17/C10" to="." method="Row17Enter"]
+[connection signal="body_entered" from="R17/C10" to="." method="Row17Enter"]
+[connection signal="area_entered" from="R18/C1" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C1" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C2" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C2" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C3" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C3" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C4" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C4" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C5" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C5" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C6" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C6" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C7" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C7" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C8" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C8" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C9" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C9" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R18/C10" to="." method="Row18Enter"]
+[connection signal="body_entered" from="R18/C10" to="." method="Row18Enter"]
+[connection signal="area_entered" from="R19/C1" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C1" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C2" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C2" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C3" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C3" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C4" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C4" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C5" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C5" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C6" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C6" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C7" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C7" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C8" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C8" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C9" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C9" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R19/C10" to="." method="Row19Enter"]
+[connection signal="body_entered" from="R19/C10" to="." method="Row19Enter"]
+[connection signal="area_entered" from="R20/C1" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C1" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C2" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C2" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C3" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C3" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C4" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C4" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C5" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C5" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C6" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C6" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C7" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C7" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C8" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C8" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C9" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C9" to="." method="Row20Enter"]
+[connection signal="area_entered" from="R20/C10" to="." method="Row20Enter"]
+[connection signal="body_entered" from="R20/C10" to="." method="Row20Enter"]
